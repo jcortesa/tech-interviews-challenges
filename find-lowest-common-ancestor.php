@@ -1,7 +1,6 @@
 <?php
 
 // # Code challenge
-// Interview done on 2025-09-24
 // 
 // Given this tree:
 //

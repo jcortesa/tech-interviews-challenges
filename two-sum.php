@@ -1,7 +1,6 @@
 <?php
 
 // # Code challenge
-// Interview done on 2025-09-24
 // 
 // Given an array of integers nums and an integer target, return 
 // the two numbers such that they add up to target.
