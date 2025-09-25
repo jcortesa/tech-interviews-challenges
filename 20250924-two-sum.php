@@ -39,3 +39,37 @@ function twoSumBruteForce(array $numbers, int $target): array {
 
 assert([1,2] === twoSumBruteForce ([1,2,3,4,5,6], 3));
 
+/**
+ * Find two sum using hash map
+ * 
+ * Time Complexity: O(n)
+ * Space Complexity: O(n)
+ * 
+ * Steps:
+ *   - loop over array of numbers
+ *      - create empty array as hash map
+ *      - calculate complementary number (target less current number)
+ *      - if this complementary does not exist on hashmap, add it and continue with loop
+ *      - if exists, return complementary and current number
+ */
+
+function twoSum(array $numbers, int $target): array {
+    $hashMap = [];
+
+    for ($i = 0; $i < count($numbers); $i++) {
+        $complementary = $target - $numbers[$i];
+
+        if (!array_key_exists($complementary, $hashMap)) {
+            $hashMap[$numbers[$i]] = null;
+            
+            continue;
+        }
+
+        return [$complementary, $numbers[$i]];
+    }
+
+    return [];
+}
+
+assert([7,8] === twoSum ([1,2,3,4,5,6,7,8], 15));
+
